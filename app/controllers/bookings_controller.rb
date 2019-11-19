@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings
   end
   def show
     @booking = Booking.find(params[:id])
@@ -9,9 +9,13 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
   def create
+    @celineversion = Celineversion.find(params[:celieversion_id])
+    @user = current_user
     @booking = Booking.new(booking_params)
+    @booking.celineversion = @celineversion
+    @booking.user = @user
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render 'new'
     end
