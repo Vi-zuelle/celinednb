@@ -1,13 +1,16 @@
 class CelineversionsController < ApplicationController
-    def index
+  def index
     @celineversion = Celineversions.all
   end
+
   def show
     @celineversion = Celineversion.find(params[:id])
   end
+
   def new
     @celineversion = Celineversion.new
   end
+
   def create
     @celineversion = Celineversion.new(celineversion_params)
     if @celineversion.save
@@ -23,5 +26,3 @@ class CelineversionsController < ApplicationController
     params.require(:celineversion).permit(:start_date, :end_date, :status)
   end
 end
-
-

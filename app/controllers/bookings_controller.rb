@@ -5,9 +5,11 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
   end
+
   def new
     @booking = Booking.new
   end
+
   def create
     @celineversion = Celineversion.find(params[:celieversion_id])
     @user = current_user
