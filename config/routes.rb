@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:show, :new, :create]
   end
   resources :bookings, only: [:index]
+  resources :my_celineversions, only: [:index]
 end
 
