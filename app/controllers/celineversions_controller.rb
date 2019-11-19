@@ -1,0 +1,2 @@
+class CelineversionsController < ApplicationController
+end
