@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @celineversion = Celineversion.find(params[:celieversion_id])
+    @celineversion = Celineversion.find(params[:celineversion_id])
     @user = current_user
     @booking = Booking.new(booking_params)
     @booking.celineversion = @celineversion
