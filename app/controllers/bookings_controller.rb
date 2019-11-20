@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @celineversion = Celineversion.find(params[:celineversion_id])
     @booking = Booking.new
   end
 
