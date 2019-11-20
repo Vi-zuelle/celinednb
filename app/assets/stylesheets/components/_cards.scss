@@ -1,3 +1,13 @@
+.home-banner {
+  background:url(https://meyersound.com/wp-content/uploads/2016/12/celine_dion_03.jpg);
+  min-height: calc(100vh - 96px);
+  background-size: cover;
+}
+
+.text-headers-style {
+  font-family: $headers-font;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
@@ -21,7 +31,6 @@
   opacity: .7;
   margin: 0;
 }
-
 
 .card-trip .card-trip-infos {
   padding: 16px;
@@ -55,4 +64,18 @@
 .card-book a{
   font-size: 10px;
   font-weight: bold;
+}
+
+.card-wbody {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 30px;
+}
+
+.card-section {
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
 }
