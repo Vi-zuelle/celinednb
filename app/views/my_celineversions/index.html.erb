@@ -1,1 +1,24 @@
-@celineversions
+<div class="container">
+  <div class="row">
+    <% @celineversions.each do |t| %>
+      <div class="col-md-4">
+
+        <div class="card-trip">
+          <%= image_tag t.image, width: 300%>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= t.name  %></h2>
+              <p><%= t.description %></p>
+            </div>
+            <h3 class="card-trip-pricing"><%= t.price %> $CAD</h3>
+            <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+          </div>
+          <div class="card-book">
+            <%= link_to "BOOK ME ?", celineversion_path(t), { class: "btn btn-dark" } %>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+</div>

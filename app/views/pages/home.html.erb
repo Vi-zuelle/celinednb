@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="card-wbody mt-5">
+          <h3 class="card-title">Book the version of Céline Dion you always wanted to meet.</h3>
+          <h5 class="card-text">Obviously, everyone is (secretely) a Céliner!</h5>
+            <div class="card-section">
+              <p class="text-headers-style"> You can list all the incredible CélineVersions we have!</p>
+              <div class="card-section">
+                <%= link_to "Display all CélineVersions", celineversions_path, { class: "btn btn-dark" } %>
+              </div>
+            </div>
+            <div class="card-section">
+              <p class="text-headers-style"> A CélineVersion is missing? We're waiting for you to add it!</p>
+              <div class="card-section">
+                <%= link_to "Create a new CélineVersion", new_celineversion_path, { class: "btn btn-dark" } %>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

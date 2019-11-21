@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div><h1><%= current_user.first_name %>'s Booking List</h1></div>
+    <div><h3>You can check all your upcoming bookings and each booking status.</h3></div>
+      <% @bookings.each do |t| %>
+        <div class="col-md-4">
+          <div class="card-trip">
+            <p><b>Booking ID#<%= t.id %></b></p>
+            <%= image_tag t.celineversion.image, width: 300%>
+            <div class="card-trip-infos">
+              <ul>
+                <li><p>Booking start date: <b><%= t.start_date %></b></p></li>
+                <li><p>Booking end date: <b><%= t.end_date %></b></p></li>
+                <li><p>Booking Price : <b><%= t.celineversion.price %>$CAD</b></p></li>
+                <li><p>Booking Status : <b><%= t.status %></b></p></li>
+                <li><p>Your Booker is: <b><%= t.user.first_name.capitalize %> <%= t.user.last_name.capitalize %> </b></p></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,7 +1,9 @@
-<h1>Book a <%= "Celine Titanic" %></h1>
-<%= simple_form_for([@user, @booking]) do |f| %>
+<h1>Book a <%= @celineversion.name %></h1>
+<%= simple_form_for([@celineversion, @booking]) do |f| %>
   <%= f.input :message, as: :text, placeholder: "Please write your message here" %>
   <%= f.input :start_date, as: :date, label: "Booking From", wrapper_html: { class: "inline_field_wrapper" } %>
-  <%= f.input :end_date, as: :date, label: 'Booked Until'.html_safe, disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
-  <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+  <%= f.input :end_date, as: :date, label: 'Booked Until'.html_safe, wrapper_html: { class: "inline_field_wrapper" } %>
+  <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block btn-booking"%>
 <% end %>
+
+<h3>Price is : <%= @celineversion.price %></h3>

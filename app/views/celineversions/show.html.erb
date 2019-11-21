@@ -1,0 +1,9 @@
+<h1><%= @celineversion.name %></h1>
+
+<p><%= @celineversion.description %></p>
+<p><%= @celineversion.price %> $CAD</p>
+
+
+<%= link_to "Book", new_celineversion_booking_path(@celineversion) , { class: "btn btn-dark" } %>
+<%= link_to "Back all Celine versions", celineversions_path  %>
+
