@@ -13,3 +13,11 @@ celineTitanic = Celineversion.create!(name: "Celine Titanic", description: "Alwa
 new_booking = Booking.create!(start_date: DateTime.now+1, end_date: DateTime.now+2, status: "Pending", user: chris, celineversion: celineTitanic, message: "Please, I want it my heart to go on")
 
 puts 'Seeds completed'
+
+gi = User.create!(first_name: "gi", last_name: "Vannetier", username: "giii", email: "gi@cdnb.com", password:"123456")
+chris = User.create!(first_name: "Christian", last_name: "Tucker", username: "chris", email: "christian@cdnb.com", password:"123456")
+celineOnCrack = Celineversion.create!(name: "Celine On Crack", description: "My Nose Is Bleeding Like a Horse on Crack, My life is going down", price: 1200, image: "https://s.yimg.com/ny/api/res/1.2/I5.Fjg6W789MQT_SApBspQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD02NjguODMwODA4ODk0NjE4MQ--/https://s.yimg.com/uu/api/res/1.2/v2QI2rJPU6SpQNNDEDutow--~B/aD0xNjcxO3c9MzEwMztzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2019-06/6e4d4ed0-8c85-11e9-9ffd-3d9a6ee121cf", user: gi)
+
+new_booking = Booking.create!(start_date: DateTime.now+1, end_date: DateTime.now+2, status: "Pending", user: gi, celineversion: celineOnCrack, message: "Please, give me crack")
+
+
