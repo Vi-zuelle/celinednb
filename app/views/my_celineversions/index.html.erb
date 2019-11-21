@@ -1,6 +1,12 @@
 <div class="container">
+  
   <% @celineversions.each do |t| %>
-    <div class="my_celines_card">
+
+    <div class="my-celines-card">
+      <div class="card-celine-version">
+   
+    <!-- card-celine-version: Celine version and pic -->
+    <!-- CODE START -->
       <div class="card-trip">
         <%= image_tag t.image, width: 300%>
         <div class="card-trip-infos">
@@ -8,47 +14,101 @@
             <h2><%= t.name  %></h2>
             <p><%= t.description %></p>
           </div>
-          <h3 class="card-trip-pricing"><%= t.price %> $CAD</h3>
-          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+            <h3 class="card-trip-pricing"><%= t.price %> $CAD</h3>
+            <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+          </div>
+          <div class="card-book">
+            <%= link_to "BOOK ME ?", celineversion_path(t), { class: "btn btn-dark" } %>
+          </div>
         </div>
-        <div class="card-book">
-          <%= link_to "BOOK ME ?", celineversion_path(t), { class: "btn btn-dark" } %>
-        </div>
+    <!-- CODE END -->
       </div>
-      <div class="bookings_info_card">
-        <ol>
-          <% t.bookings.where(status: "Pending").reverse_each do |booking|  %>
-            <li>
-              <%= booking.user.full_name %>
-              from: <%= booking.start_date %> to: <%= booking.end_date %>
 
-              <%= simple_form_for(booking, defaults: { input_html: { class: 'default_class' } } ) do |f|  %>
-                <div class="booking-btn">
-                  <%= f.input :status, as: :hidden, input_html: { value: "Confirmed" } %>
-                  <%= f.submit("Confirm", { class: "btn btn-success" }) %>
-                </div>
-              <% end %>
-              <%= simple_form_for(booking)  do |f|  %>
-                <div class="booking-btn">
-                  <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
-                  <%= f.submit("Decline" , { class: "btn btn-danger" }) %>
-                </div>
-              <% end %>
-            </li>
-            <%= render "shared/modal_booking_msg", booking: booking %>
+
+      <div class="booking-container">
+        <!-- booking-container -->
+        <div class="booking-info-cards">
+          <!-- booking-info-cards: Pending -->
+          <!-- CODE START -->
+          <h3>Pending</h3>
+          <!-- CODE END -->
+
+          <!-- CODE booking info loop pending START -->
+          <% t.bookings.where(status: "Pending").reverse_each do |booking|  %>
+            <div class="booking-info-card">
+              <strong> <%= booking.user.full_name %></strong>
+              <br>
+              <%= booking.start_date %> <em>to</em> <%= booking.end_date %>
+              <!-- booking-info-card -->
+              <!-- buttons -->
+              <div class="btn-container">
+                <%= simple_form_for(booking, defaults: { input_html: { class: 'default_class' } } ) do |f|  %>
+                  <div class="booking-btn">
+                    <%= f.input :status, as: :hidden, input_html: { value: "Confirmed" } %>
+                    <%= f.submit("Confirm", { class: "btn btn-outline-success" }) %>
+                  </div>
+                <% end %>
+                <%= simple_form_for(booking)  do |f|  %>
+                  <div class="booking-btn">
+                    <%= f.input :status, as: :hidden, input_html: { value: "Declined" } %>
+                    <%= f.submit("Decline" , { class: "btn btn-outline-danger" }) %>
+                  </div>
+                <% end %>
+                <button type="button" class="btn btn-outline-dark booking-btn" data-toggle="modal" data-target="#bookingModal-<%= booking.id %>">
+                  Message
+                </button>
+                <!-- buttons end -->
+              </div>
+            </div> 
           <% end %>
-        </ol>
-        <ol>
-          <% t.bookings.where(status: "Confirmed").reverse_each do |booking|  %>
-            <li>
-              <strong>confirmed</strong>
-              <%= booking.user.full_name %>
-              from: <%= booking.start_date %> to: <%= booking.end_date %>
-            </li>
-          <% end %>
-        </ol>
-        
+                    <!-- CODE booking info loop pending END -->
+
+        </div>
+
+        <div class="booking-info-cards">
+          <!-- booking-info-cards: Confirmed -->
+            <!-- CODE -->
+            <h3>Confirmed</h3>
+            <!-- CODE -->
+            <% t.bookings.where(status: "Confirmed").reverse_each do |booking|  %>
+          <div class="booking-info-card">
+            <!-- booking-info-card -->
+            <!-- CODE booking info loop confirmed START -->
+            <strong><%= booking.user.full_name %></strong>
+            <br>
+            <%= booking.start_date %> <em>to</em> <%= booking.end_date %>
+
+
+          </div> 
+            <% end %>
+        </div>
       </div>
     </div>
+    <% t.bookings.each do |booking| %>
+      <%= render "shared/modal_booking_msg", booking: booking %>
+    <% end %>
   <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
