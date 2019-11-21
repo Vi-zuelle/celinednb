@@ -14,7 +14,7 @@ costin = User.create!(first_name: "Costin", last_name: "Dumi", username: "Costin
 gi = User.create!(first_name: "gi", last_name: "Vannetier", username: "giii", email: "gi@cdnb.com", password:"123456")
 
 #Celine Seeds
-celineTitanic = Celineversion.create!(name: "Celine Titanic", description: "Always sinking her heart that went on", price: 1200, image: "https://www.berussamusicart.com/wp-content/themes/_stylebook/timthumb.php?src=https%3A%2F%2Fwww.berussamusicart.com%2Fwp-content%2Fuploads%2F2015%2F05%2FCeline-Dion-–-Titanic.jpg&q=90&w=795&zc=1", user: vi)
+celineTitanic = Celineversion.create!(name: "Celine Titanic", description: "Always sinking her heart that went on", price: 1200, image: "https://www.berussamusicart.com/wp-content/themes/_stylebook/timthumb.php?src=https%3A%2F%2Fwww.berussamusicart.com%2Fwp-content%2Fuploads%2F2015%2F05%2FCeline-Dion-–-Titanic.jpg&q=90&w=795&zc=1", user: chris)
 celineOnCrack = Celineversion.create!(name: "Celine On Crack", description: "My Nose Is Bleeding Like a Horse on Crack, My life is going down", price: 3200, image: "https://s.yimg.com/ny/api/res/1.2/I5.Fjg6W789MQT_SApBspQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD02NjguODMwODA4ODk0NjE4MQ--/https://s.yimg.com/uu/api/res/1.2/v2QI2rJPU6SpQNNDEDutow--~B/aD0xNjcxO3c9MzEwMztzbT0xO2FwcGlkPXl0YWNoeW9u/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2019-06/6e4d4ed0-8c85-11e9-9ffd-3d9a6ee121cf", user: gi)
 celineHaunted = Celineversion.create!(name: "Celine on Demon Speed ", description: "The Demon is in meeee", price: 9000, image: "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2019/04/931/524/Celine-Dion-2-AP.jpg?ve=1&tl=1", user: quan)
 
