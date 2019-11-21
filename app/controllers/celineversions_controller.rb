@@ -22,6 +22,24 @@ class CelineversionsController < ApplicationController
     end
   end
 
+  def edit
+    @celineversion = Celineversion.find(params[:id])
+  end
+
+  def update
+    @celineversion = Celineversion.find(params[:id])
+    @celineversion.update(celineversion_params)
+
+    redirect_to celineversion_path(@celineversion)
+  end
+
+  def destroy
+    @celineversion = Celineversion.find(params[:id])
+    @celineversion.destroy
+
+    redirect_to my_celineversions_path
+  end
+
   private
 
   def celineversion_params
