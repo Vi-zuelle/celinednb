@@ -1,26 +1,37 @@
-<div class="container">
+<div class="container mt-5">
+
+  <div class="row">
+    <div><h2><strong>All the available CélineVersions</strong></h2></div>
+  </div>
+  <div class="row">
+    <div class="mb-5"><h5>Choose the version of Céline that fits your style.</h5></div>
+  </div>
+
   <div class="row">
     <% @celineversions.each do |t| %>
       <div class="col-md-4">
 
-        <div class="card-trip">
+        <div class="card-container cc-hover">
           <%= image_tag t.image, width: 300%>
-          <div class="card-trip-infos">
+          <div class="card-container-infos">
             <div>
               <h2><%= t.name  %></h2>
-              <p><%= t.description %></p>
+              <div class="mt-2"><h4><%= t.description %></h4></div>
             </div>
-            <h3 class="card-trip-pricing"><%= t.price %> $CAD</h3>
-            <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+              <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
           </div>
-          <div class="card-book">
-            <%= link_to "BOOK ME ?", celineversion_path(t), { class: "btn btn-dark" } %>
+          <div class="card-container-pricing mr-3">
+            <h3><strong><%= t.price %> $CAD</strong></h3>
+          </div>
+            <div class="card-book m-3">
+              <%= link_to "CHECK THIS VERSION", celineversion_path(t), { class: "btn btn-outline-dark" } %>
+            </div>
           </div>
         </div>
-      </div>
 
     <% end %>
   </div>
+
 </div>
 
 

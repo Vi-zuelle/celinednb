@@ -8,49 +8,66 @@
   font-family: $headers-font;
 }
 
-.card-trip {
+.card-container {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  transition: .8s;
 }
 
-.card-trip > img {
-  height: 200px;
+.card-container img {
+  height: 350px;
   width: 100%;
   object-fit: cover;
 }
 
-.card-trip h2 {
-  font-size: 16px;
+img.card-container-img {
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-container h2 {
+  font-size: 26px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-trip p {
+.card-container h3 {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.card-container h4 {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.card-container h5 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.card-container p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
-.card-trip .card-trip-infos {
+.card-container .card-container-infos {
   padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  min-height: 140px;
 }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
-
-.card-trip-pricing {
-  font-size: 12px;
+.card-container-pricing {
   font-weight: bold;
-  margin: 0;
+  text-align: right;
+}
+
+.cc-hover:hover {
+  transform: scale(1.05);
 }
 
 .card-book {
@@ -58,11 +75,11 @@
   justify-content: center;
   align-items: flex-end;
   position: relative;
-  padding-bottom: 8px;
+  // padding-bottom: 8px;
 }
 
 .card-book a{
-  font-size: 10px;
+  font-size: 16px;
   font-weight: bold;
 }
 
