@@ -1,9 +1,24 @@
-<h1>Book a <%= @celineversion.name %></h1>
-<%= simple_form_for([@celineversion, @booking]) do |f| %>
-  <%= f.input :message, as: :text, placeholder: "Please write your message here" %>
-  <%= f.input :start_date, as: :date, html5: true, label: "Booking From", wrapper_html: { class: "inline_field_wrapper" } %>
-  <%= f.input :end_date, as: :date, html5: true, label: 'Booked Until'.html_safe, wrapper_html: { class: "inline_field_wrapper" } %>
-  <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block btn-booking"%>
-<% end %>
-
-<h3>Price is : <%= @celineversion.price %></h3>
+<div class="container">
+    <h1 class="mt-5">Book a <b><%= @celineversion.name %></b></h1>
+    <h5 class="mb-2">This version's price is <strong><%= @celineversion.price %> $CAD</strong></h5>
+    <p class="mb-5"><strong><%= @celineversion.name %></strong>
+      <% if @celineversion.bookings.last.status == "Pending"%>
+         is currently<strong> available.</strong> You can book it.
+      <% else %>
+        has a booking confirmed from <strong><%= @celineversion.bookings.last.start_date %></strong> until <strong><%= @celineversion.bookings.last.end_date %></strong>
+      <% end %>
+    </p>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card-container p-5">
+        <%= simple_form_for([@celineversion, @booking]) do |f| %>
+          <%= f.input :message, as: :text, placeholder: "Please write your message here", label: "Write a message for the version's owner" %>
+          <%= f.input :start_date, as: :date, html5: true, label: "Start booking on", wrapper_html: { class: "inline_field_wrapper" } %>
+          <%= f.input :end_date, as: :date, html5: true, label: 'Booked until'.html_safe, wrapper_html: { class: "inline_field_wrapper" } %>
+          <%= f.submit "Submit", class: "btn btn-outline-dark"%>
+        <% end %>
+      </div>
+      <div class="mt-5 text-right"><%= link_to "BACK TO ALL VERSIONS", celineversions_path, class: "btn btn-light active" %></div>
+    </div>
+  </div>
+</div>

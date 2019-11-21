@@ -1,17 +1,13 @@
 <div class="container mt-5">
 
-  <div class="row">
-    <div><h2><strong>All the available CélineVersions</strong></h2></div>
-  </div>
-  <div class="row">
-    <div class="mb-5"><h5>Choose the version of Céline that fits your style.</h5></div>
-  </div>
+    <h2><strong>All the available CélineVersions</strong></h2>
+    <h5 class="mb-5">Choose the version of Céline that fits your style.</h5>
 
   <div class="row">
     <% @celineversions.each do |t| %>
       <div class="col-md-4">
 
-        <div class="card-container cc-hover">
+        <div class="card-container cc-hover mb-4">
           <%= image_tag t.image, width: 300%>
           <div class="card-container-infos">
             <div>
