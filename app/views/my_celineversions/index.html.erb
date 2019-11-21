@@ -1,24 +1,49 @@
 <div class="container">
-  <div class="row">
-    <% @celineversions.each do |t| %>
-      <div class="col-md-4">
-
-        <div class="card-trip">
-          <%= image_tag t.image, width: 300%>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= t.name  %></h2>
-              <p><%= t.description %></p>
-            </div>
-            <h3 class="card-trip-pricing"><%= t.price %> $CAD</h3>
-            <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+  <% @celineversions.each do |t| %>
+    <div class="my_celines_card">
+      <div class="card-trip">
+        <%= image_tag t.image, width: 300%>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= t.name  %></h2>
+            <p><%= t.description %></p>
           </div>
-          <div class="card-book">
-            <%= link_to "BOOK ME ?", celineversion_path(t), { class: "btn btn-dark" } %>
-          </div>
+          <h3 class="card-trip-pricing"><%= t.price %> $CAD</h3>
+          <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
         </div>
-
+        <div class="card-book">
+          <%= link_to "BOOK ME ?", celineversion_path(t), { class: "btn btn-dark" } %>
+        </div>
       </div>
-    <% end %>
-  </div>
+      <div class="bookings_info_card">
+        <ol>
+          <% t.bookings.where(status: "Pending").each do |booking|  %>
+            <li>
+              <%= booking.user.full_name %>
+              from: <%= booking.start_date %> to: <%= booking.end_date %>
+              <%= simple_form_for(booking) do |f|  %>
+                <%= f.input :status, as: :hidden, input_html: { value: "Confirmed" }  %>
+                <%= f.submit("Confirm", { class: "btn btn-success" }) %>
+              <% end %>
+              <%= simple_form_for(booking) do |f|  %>
+                <%= f.input :status, as: :hidden, input_html: { value: "Declined" }  %>
+                <%= f.submit("Decline" , { class: "btn btn-danger" }) %>
+              <% end %>
+            </li>
+          <% end %>
+        </ol>
+        <ol>
+          <% t.bookings.where(status: "Confirmed").each do |booking|  %>
+            <li>
+              <strong>confirmed</strong>
+              <%= booking.user.full_name %>
+              from: <%= booking.start_date %> to: <%= booking.end_date %>
+
+            </li>
+          <% end %>
+        </ol>
+        
+      </div>
+    </div>
+  <% end %>
 </div>

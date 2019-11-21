@@ -79,3 +79,15 @@
   font-weight: bold;
   margin: 0;
 }
+
+.my_celines_card {
+  display: flex;
+
+  .card-trip {
+    width: 30%;
+  }
+
+  .bookings_info_card {
+    width: 70%;
+  }
+}
