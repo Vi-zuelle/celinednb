@@ -1,0 +1,8 @@
+<h1>Edit this CélineVersion: <%= @celineversion.name %></h1>
+<%= simple_form_for([@user, @celineversion]) do |f| %>
+  <%= f.input :name, as: :string, placeholder: "Choose a new name for your version" %>
+  <%= f.input :description, as: :text, label: "Edit the description of your version" %>
+  <%= f.input :price, as: :integer, label: 'Choose a new price in $CAD for your CélineVersion' %>
+  <%= f.input :image, as: :string, placeholder: "Paste a new url of the image your CélineVersion" %>
+  <%= f.submit "Submit", class: "btn btn-dark btn-lg btn-block btn-booking"%>
+<% end %>
