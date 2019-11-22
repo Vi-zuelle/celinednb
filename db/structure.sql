@@ -120,7 +120,8 @@ CREATE TABLE public.users (
     reset_password_sent_at timestamp without time zone,
     remember_created_at timestamp without time zone,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    avatar character varying DEFAULT 'http://caillouetland.com/wp-content/uploads/2017/07/avatar-blank.png'::character varying
 );
 
 
@@ -274,6 +275,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20191119184720'),
 ('20191119190356'),
 ('20191119205305'),
-('20191120214256');
+('20191120214256'),
+('20191122165855');
 
 

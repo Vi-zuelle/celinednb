@@ -16,13 +16,13 @@
 }
 
 .card-container img {
-  height: 350px;
+  height: 250px;
   width: 100%;
   object-fit: cover;
 }
 
 img.card-container-img {
-  height: 500px;
+  height: 450px;
   width: 100%;
   object-fit: cover;
 }
@@ -58,12 +58,12 @@ img.card-container-img {
 
 .card-container .card-container-infos {
   padding: 16px;
-  min-height: 140px;
+  min-height: 180px;
 }
 
 .card-container-pricing {
   font-weight: bold;
-  text-align: right;
+  text-align: center;
 }
 
 .cc-hover:hover {
@@ -88,19 +88,6 @@ img.card-container-img {
 .card-form .card-form-display {
   padding: 45px;
   width: 100%;
-}
-
-.card-book {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  position: relative;
-  // padding-bottom: 8px;
-}
-
-.card-book a{
-  font-size: 16px;
-  font-weight: bold;
 }
 
 .card-wbody {
@@ -150,10 +137,6 @@ img.card-container-img {
   justify-content: flex-end;
 }
 
-
-
-
-
 .my-celines-card {
   // background-color: red;
   display: flex;
@@ -181,18 +164,14 @@ img.card-container-img {
   // padding: 5px;
   width: 50%;
   text-align: center;
-  
-
 }
-
 
 .booking-info-card {
   // background-color: yellow;
   margin: 5px;
   padding: 5px;
-  text-align: left;  
+  text-align: left;
 }
-
 
 .btn-container {
   display: flex;
@@ -200,11 +179,3 @@ img.card-container-img {
   justify-content: space-around;
   padding: 5px;
 }
-
-
-
-
-
-
-
-
