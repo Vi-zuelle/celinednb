@@ -1,8 +1,23 @@
-<h1>Create a new CélineVersion</h1>
-<%= simple_form_for([@user, @celineversion]) do |f| %>
-  <%= f.input :name, as: :string, placeholder: "Please choose a name for your version" %>
-  <%= f.input :description, as: :text, label: "Write down a description of your beloved version of Céline" %>
-  <%= f.input :price, as: :integer, label: 'Choose a price in $CAD for your CélineVersion' %>
-  <%= f.input :image, as: :string, placeholder: "Paste the url of the image your CélineVersion" %>
-  <%= f.submit "Submit", class: "btn btn-dark btn-lg btn-block btn-booking"%>
-<% end %>
+<div class="container">
+  <h1 class="mt-5">Create a new <strong>CélineVersion</strong></h1>
+  <h5 class="mb-4">A CélineVersion is missing? It's time to create it!</h5>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card-form">
+        <div class="card-form-display">
+          <%= simple_form_for([@user, @celineversion]) do |f| %>
+            <%= f.input :name, as: :string, placeholder: "Please choose a name for your version", label: "What's the name of your CélineVersion?" %>
+            <%= f.input :description, as: :text, placeholder: "Write down a description of your beloved version of Céline", label: "Describe in few expressive words your beloved CélineVersion" %>
+            <%= f.input :price, as: :integer, placeholder: "0000", label: 'Choose a price in $CAD/day for your CélineVersion' %>
+            <%= f.input :image, as: :string, placeholder: "Paste the url of the image of your CélineVersion", label: "Choose a nice image for your CélineVersion" %>
+            <%= f.submit "Create", class: "btn btn-outline-dark"%>
+          <% end %>
+        </div>
+      <img src="https://i0.gmx.at/image/190/33783190,pd=1,f=opengraph/celine-dion.jpg" />
+      </div>
+      <div class="mt-5 text-right"><%= link_to "GO TO YOUR CREATED VERSIONS", my_celineversions_path, class: "btn btn-light active" %></div>
+    </div>
+  </div>
+
+</div>

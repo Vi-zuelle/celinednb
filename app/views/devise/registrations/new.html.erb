@@ -1,34 +1,24 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :first_name,
-                required: true,
-                input_html: { autocomplete: "first_name" } %>
-    <%= f.input :last_name,
-                required: true,
-                input_html: { autocomplete: "last_name" } %>
-    <%= f.input :username,
-                required: true,
-                input_html: { autocomplete: "username" } %>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<div class="container mt-5">
+  <h2><strong>Sign up today!</strong> Join the Céliners community.</h2>
+  <h5 class="mb-4">Just few steps to booking your CélineVersion or creating one.</h5>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card-form">
+        <img src="https://france3-regions.francetvinfo.fr/bretagne/sites/regions_france3/files/styles/top_big/public/assets/images/2019/10/09/maxpaimages658694-4461971.jpg?itok=msyb1q_-" />
+        <div class="card-form-display">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :first_name, required: true, placeholder: "René", label: "Enter your First Name", input_html: { autocomplete: "first_name" } %>
+            <%= f.input :last_name, required: true, placeholder: "Angélil", label: "Enter your Last Name", input_html: { autocomplete: "last_name" } %>
+            <%= f.input :username, required: true, placeholder: "mon_mari_rene", label: "Choose a Username", input_html: { autocomplete: "username" } %>
+            <%= f.input :email, required: true, autofocus: true, placeholder: "rene@celineforever.com", label: "Enter a valid e-mail address", input_html: { autocomplete: "email" }%>
+            <%= f.input :password, required: true, placeholder: "*******", label: "Choose a password", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation, required: true, placeholder: "*******", label: "Confirm your password", input_html: { autocomplete: "new-password" } %>
+            <%= f.button :submit, "SIGN UP", class: "btn btn-outline-dark" %>
+          <% end %>
+        </div>
+      </div>
+    <div class="mt-5 text-right"><%= render "devise/shared/links" %></div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
