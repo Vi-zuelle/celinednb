@@ -143,6 +143,12 @@ img.card-container-img {
   margin-top: 10px;
 }
 
+.my-celine-versions-card {
+  .card-container-infos {
+    min-height: 0;
+  }
+}
+
 
 .card-celine-version{
   // background-color: green;
@@ -158,8 +164,8 @@ img.card-container-img {
   width: 70%;
   box-shadow: 0 0 30px rgba(0,0,0,0.5);
   transition: .8s;
-  min-height: 180px;
-  margin-bottom: 1.5rem !important
+  // min-height: 273px;
+  // margin-bottom: 1.5rem !important
 }
 
 .booking-info-cards {
