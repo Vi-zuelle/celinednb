@@ -116,3 +116,95 @@ img.card-container-img {
   font-weight: bold;
   margin: 0;
 }
+
+.my_celines_card {
+  display: flex;
+  // margin: 10px;
+  .card-trip {
+    width: 30%;
+  }
+
+  .bookings_info_card {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    li > * {
+      display: inline-block;
+    }
+    ol {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      width: 100%;
+    }
+  }
+}
+
+.booking-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+
+
+
+
+.my-celines-card {
+  // background-color: red;
+  display: flex;
+}
+
+
+.card-celine-version{
+  // background-color: green;
+  margin: 5px;
+  display: flex;
+  width: 30%;
+}
+
+.booking-container {
+  background-color: white;
+  display: flex;
+  margin: 5px;
+  width: 70%;
+
+}
+
+.booking-info-cards {
+  // background-color: blue;
+  margin: 5px;
+  // padding: 5px;
+  width: 50%;
+  text-align: center;
+  
+
+}
+
+
+.booking-info-card {
+  // background-color: yellow;
+  margin: 5px;
+  padding: 5px;
+  text-align: left;  
+}
+
+
+.btn-container {
+  display: flex;
+  margin: 5px;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+
+
+
+
+
+
+
