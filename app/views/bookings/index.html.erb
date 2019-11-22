@@ -1,8 +1,12 @@
 <div class="container">
+  <div class="d-flex mt-4">
+    <%= image_tag current_user.avatar, class: "avatar-profile mr-3" %>
+    <div class="text-left">
+      <h2><strong><%= current_user.first_name.capitalize %></strong>'s Booked CélineVersions.</h2>
+      <h5 class="mb-5">Check all your upcoming bookings and each booking status.</h5>
+    </div>
+  </div>
   <div class="row mt-5">
-    <div><h1><%= current_user.first_name %>'s Booking List</h1></div>
-    <div><h3>You can check all your upcoming bookings and each booking status.</h3></div>
-
       <% if @bookings.exists? %>
         <% @bookings.each do |t| %>
           <div class="col-md-4">
