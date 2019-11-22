@@ -1,20 +1,19 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="container mt-5">
+  <h2 class="mb-4"><strong>Sign in.</strong> The Céliners are waiting for you.</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card-form">
+        <img src="https://cdn.newsapi.com.au/image/v1/3bc6f1eaf31152c6f57964d0b4f36693" />
+        <div class="card-form-display">
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= f.input :email, required: false, autofocus: true, placeholder: "rene@celineforever.com", label:"Enter your e-mail address", input_html: { autocomplete: "email" } %>
+            <%= f.input :password, required: false, placeholder: "******", label:"Enter your password", input_html: { autocomplete: "current-password" } %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            <%= f.button :submit, "SIGN IN", class: "btn btn-outline-success" %>
+          <% end %>
+        </div>
+      </div>
+    <div class="mt-5 text-right"><%= render "devise/shared/links" %></div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
