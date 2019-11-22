@@ -1,6 +1,11 @@
 <div class="container mt-5">
-  <h2><strong><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></strong>'s Profile Page.</h2>
-  <h5 class="mb-4">You can view and edit your profile below.</h5>
+  <div class="d-flex">
+    <%= image_tag current_user.avatar, class: "avatar-profile mr-3" %>
+    <div class="text-left">
+      <h2><strong><%= current_user.full_name %></strong>'s Profile Page.</h2>
+      <h5 class="mb-5">You can view and edit your profile below.</h5>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-12">
       <div class="card-form">

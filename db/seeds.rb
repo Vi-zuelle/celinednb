@@ -8,7 +8,7 @@ puts 'Creating seeds'
 
 #User seeds
 vi = User.create!(first_name: "Vi", last_name: "Pannetier", username: "vi", email: "vi@cdnb.com", password:"123456")
-chris = User.create!(first_name: "Christian", last_name: "Doumit", username: "chris", email: "christian@cdnb.com", password:"123456")
+chris = User.create!(first_name: "Christian", last_name: "Doumit", username: "chris", email: "christian@cdnb.com", password:"123456", avatar:"https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/ekipyhjtwrtniwwln3xl.jpg")
 quan = User.create!(first_name: "Quan", last_name: "Nguyen", username: "Quanito1337", email: "quan@cdnb.com", password:"123456")
 costin = User.create!(first_name: "Costin", last_name: "Dumi", username: "Costin123", email: "costin@cdnb.com", password:"123456")
 gi = User.create!(first_name: "gi", last_name: "Vannetier", username: "giii", email: "gi@cdnb.com", password:"123456")
@@ -31,6 +31,6 @@ new_booking6 = Booking.create!(start_date: DateTime.now+6, end_date: DateTime.no
 new_booking7 = Booking.create!(start_date: DateTime.now+7, end_date: DateTime.now+9, status: "Pending", user: chris, celineversion: vi_celineDesert, message: "Please, I want it my heart to go on")
 new_booking8 = Booking.create!(start_date: DateTime.now+8, end_date: DateTime.now+10, status: "Pending", user: vi, celineversion: chris_celineTitanic, message: "Please, I want it my heart to go on")
 new_booking9 = Booking.create!(start_date: DateTime.now+9, end_date: DateTime.now+11, status: "Pending", user: chris, celineversion: vi_celineCourage, message: "Please, I want it my heart to go on")
-new_booking10 = Booking.create!(start_date: DateTime.now+10, end_date: DateTime.now+12, status: "Pending", user: chris, celineversion: cvi_celineDesert, message: "Please, I want it my heart to go on")
+new_booking10 = Booking.create!(start_date: DateTime.now+10, end_date: DateTime.now+12, status: "Pending", user: chris, celineversion: vi_celineDesert, message: "Please, I want it my heart to go on")
 
 puts 'Seeds completed'
