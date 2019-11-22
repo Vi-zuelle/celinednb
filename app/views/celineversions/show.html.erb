@@ -13,7 +13,7 @@
         <div class="border-top border-dark m-4">
           <h3 class="m-3"><strong>Interested ?</strong> You can book this CélineVersion for just <strong><%= @celineversion.price %> $CAD per day.</strong></h3>
         </div>
-        <div class="card-book">
+        <div class="text-center">
           <ul>
             <%= link_to "BOOK THIS VERSION", new_celineversion_booking_path(@celineversion), { class: "btn btn-dark" } %>
             <% if @celineversion.user == current_user %>
