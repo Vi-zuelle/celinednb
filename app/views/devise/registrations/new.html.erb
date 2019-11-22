@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container my-5">
   <h2><strong>Sign up today!</strong> Join the Céliners community.</h2>
   <h5 class="mb-4">Just few steps to booking your CélineVersion or creating one.</h5>
   <div class="row">
@@ -11,6 +11,7 @@
             <%= f.input :first_name, required: true, placeholder: "René", label: "Enter your First Name", input_html: { autocomplete: "first_name" } %>
             <%= f.input :last_name, required: true, placeholder: "Angélil", label: "Enter your Last Name", input_html: { autocomplete: "last_name" } %>
             <%= f.input :username, required: true, placeholder: "mon_mari_rene", label: "Choose a Username", input_html: { autocomplete: "username" } %>
+            <%= f.input :avatar, hint: "Copy/Paste the url of a picture for your avatar",required: true, autofocus: true, label: "Add an avatar to your account"%>
             <%= f.input :email, required: true, autofocus: true, placeholder: "rene@celineforever.com", label: "Enter a valid e-mail address", input_html: { autocomplete: "email" }%>
             <%= f.input :password, required: true, placeholder: "*******", label: "Choose a password", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation, required: true, placeholder: "*******", label: "Confirm your password", input_html: { autocomplete: "new-password" } %>
