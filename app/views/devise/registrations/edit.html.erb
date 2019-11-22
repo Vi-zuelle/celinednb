@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container my-5">
   <div class="d-flex">
     <%= image_tag current_user.avatar, class: "avatar-profile mr-3" %>
     <div class="text-left">
@@ -21,6 +21,11 @@
                         required: true,
                         autofocus: true,
                         label: "Choose a new username if you want to change it" %>
+            <%= f.input :avatar,
+                        hint: "Copy/Paste the url of a new picture for your avatar if you want to change it",
+                        required: true,
+                        autofocus: true,
+                        label: "You can edit your avatar"%>
             <%= f.input :password,
                         hint: "Leave it blank if you don't want to change it",
                         required: false,

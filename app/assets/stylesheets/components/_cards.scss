@@ -51,8 +51,8 @@ img.card-container-img {
 }
 
 .card-container p {
-  font-size: 12px;
-  opacity: .7;
+  font-size: 15px;
+  // opacity: .6;
   margin: 0;
 }
 
@@ -64,6 +64,19 @@ img.card-container-img {
 .card-container-pricing {
   font-weight: bold;
   text-align: center;
+}
+
+.card-container .card-container-cont {
+  padding: 16px;
+  min-height: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-container .card-list {
+  list-style-type: none;
 }
 
 .cc-hover:hover {
@@ -95,6 +108,9 @@ img.card-container-img {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 30px;
+  width: 70%;
+  margin-left: 30%;
+  margin-top: 300px;
 }
 
 .card-section {

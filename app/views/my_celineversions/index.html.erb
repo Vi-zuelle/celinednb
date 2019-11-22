@@ -1,7 +1,5 @@
 <div class="container">
 
-
-  
   <% if @celineversions.length < 1 %>
   <div class="d-flex mt-4">
     <%= image_tag current_user.avatar, class: "avatar-profile mr-3" %>
@@ -94,8 +92,6 @@
               <strong><%= booking.user.full_name %></strong>
               <br>
               <%= booking.start_date %> <em>to</em> <%= booking.end_date %>
-
-
             </div> 
               <% end %>
           </div>
