@@ -140,6 +140,7 @@ img.card-container-img {
 .my-celines-card {
   // background-color: red;
   display: flex;
+  margin-top: 10px;
 }
 
 
@@ -155,7 +156,10 @@ img.card-container-img {
   display: flex;
   margin: 5px;
   width: 70%;
-
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  transition: .8s;
+  min-height: 180px;
+  margin-bottom: 1.5rem !important
 }
 
 .booking-info-cards {
@@ -171,6 +175,7 @@ img.card-container-img {
   margin: 5px;
   padding: 5px;
   text-align: left;
+  border-left: 2px solid $light-gray;
 }
 
 .btn-container {
@@ -178,4 +183,22 @@ img.card-container-img {
   margin: 5px;
   justify-content: space-around;
   padding: 5px;
+}
+
+.grey-bar-container {
+  border-left: 1px solid $light-gray;
+}
+
+// .title-container {
+//   text-align: center;
+//   margin: 10px 5px;
+//   padding: 5px;
+//   background-color: white;
+//   box-shadow: 0 0 30px rgba(0,0,0,0.5);
+//   transition: .8s;
+// }
+
+#mycelineversion-h2 {
+  text-align: left;
+  margin: 50px 0px;
 }
