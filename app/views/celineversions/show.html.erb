@@ -1,18 +1,19 @@
 <div class="container mt-5">
+  <h2 class="mb-3">Selected Version > <strong><%= @celineversion.name %></strong></h2>
   <div class="row">
-    <div class="col-md-12">
 
-      <div class="mb-3"><h2>Selected Version > <strong><%= @celineversion.name %></strong></h2></div>
+    <div class="col-md-12">
       <div class="card-container">
         <%= image_tag @celineversion.image, class: "card-container-img" %>
-
         <div class="card-container-infos">
-          <h3><%= @celineversion.description %></h3>
+          <h4>This CélineVersion was created by <strong><%= @celineversion.user.first_name.capitalize %> <%= @celineversion.user.last_name.capitalize %></strong></h4>
+          <h2 class="mt-3"><strong>What is it about?</strong></h2>
+          <h3 class="m-3"><%= @celineversion.description %></h3>
         </div>
-
-        <h5 class="card-container-pricing mr-3"><%= @celineversion.price %> $CAD</h5>
-
-        <div class="card-book m-2">
+        <div class="border-top border-dark m-4">
+          <h3 class="m-3"><strong>Interested ?</strong> You can book this CélineVersion for just <strong><%= @celineversion.price %> $CAD per day.</strong></h3>
+        </div>
+        <div class="card-book">
           <ul>
             <%= link_to "BOOK THIS VERSION", new_celineversion_booking_path(@celineversion), { class: "btn btn-dark" } %>
             <% if @celineversion.user == current_user %>
@@ -22,7 +23,7 @@
           </ul>
         </div>
       </div>
-      <div class="mt-5 text-right"><%= link_to "BACK TO ALL VERSIONS", celineversions_path, class: "btn btn-light active" %></div>
-    </div>
+    <div class="mt-5 text-right"><%= link_to "BACK TO ALL VERSIONS", celineversions_path, class: "btn btn-light active" %></div>
+  </div>
   </div>
 </div>
