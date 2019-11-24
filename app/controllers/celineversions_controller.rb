@@ -1,6 +1,11 @@
 class CelineversionsController < ApplicationController
   def index
-    @celineversions = Celineversion.all
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query"
+      @celineversions = Celineversion.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @celineversions = Celineversion.all
+    end
   end
 
   def show

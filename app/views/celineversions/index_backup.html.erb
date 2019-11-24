@@ -4,20 +4,18 @@
   <h5 class="mb-5">Choose the version of Céline that fits your style.</h5>
 
   <!-- Seach bar start -->
-    <div class="search_form">
+  <div class="search_form">
 
-      <%= form_tag celineversions_path, method: :get do %>
-        <div class="search-form-control form-group">
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control string required search_bar",
-            placeholder: "find a celineversion"
-          %>
+    <%= form_tag celineversions_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control search_bar",
+        placeholder: "find a celineversion"
+      %>
 
-          <%= submit_tag "Search", class: "btn btn-outline-dark search_btn" %>
-        </div>
-      <% end %>
-    </div>
+      <%= submit_tag "Search", class: "btn btn-outline-dark search_btn" %>
+    <% end %>
+  </div>
   <!-- Seach bar end -->
 
   <div class="row">
